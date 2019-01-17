@@ -20,6 +20,8 @@
 #define _LOWER 2
 #define MED 3
 #define _______ KC_TRNS
+#define _CP LCTL(KC_INS)
+#define _PST LSFT(KC_INS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DEFAULT] = {
@@ -30,24 +32,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 [_RAISE] = { 
-    { KC_GRV,  KC_TILD, KC_LPRN, KC_RPRN, KC_TAB,  _______, KC_BSPC, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC },
-    { KC_PLUS, KC_EQL,  KC_UNDS, KC_MINS, KC_ESC,  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PIPE },
-    { _______, _______, KC_DQT,  KC_QUOT, KC_DEL,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_BSLS },
+    { KC_TILD, KC_GRV,  KC_LPRN, KC_RPRN, KC_TAB,  _______, KC_BSPC, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC },
+    { KC_PLUS, KC_EQL,  KC_UNDS, KC_MINS, KC_ESC,  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_TRNS },
+    { KC_PIPE, KC_BSLS, KC_DQT,  KC_QUOT, KC_ENT,  _______, KC_DEL,  KC_PGDN, KC_PGUP, KC_HOME, KC_END  },
     { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ }
 },
 
 [_LOWER] = {
     { KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0    },
     { KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN },
-    { _______, _______, _______, _______, _______, _______, _______, KC_PLUS, KC_EQL,  KC_SLSH, KC_ASTR },
+    { _______, _______, _CP,     _PST,    _______, _______, _______, KC_PLUS, KC_EQL,  KC_SLSH, KC_ASTR },
     { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ }
 },
 
 [MED] = {
-    { KC_F1,   KC_F2,       KC_F3,   KC_F4,       KC_F5,   _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10  },
-    { _______, _______,     _______, _______,     _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_F11  },
-    { _______, _______,LCTL(KC_INS), LSFT(KC_INS),_______, _______, _______, KC_MPLY, _______, _______, KC_F12  },
-    { _______, _______,     _______, _______,     _______, KC_MPLY, _______, _______, _______, _______, _______ }
+    { KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10  },
+    { _______, _______, _______, _______, _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_F11  },
+    { _______, _______, _CP,     _PST,    _______, _______, _______, KC_MPLY, KC_MPLY, _______, KC_F12  },
+    { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ }
 }
 
 };
